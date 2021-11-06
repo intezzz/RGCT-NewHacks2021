@@ -5,7 +5,7 @@ from .models import *
 class FoodRecordSerializer(serializers.ModelSerializer):
     class Meta:
         model = FoodRecord
-        fields = ["id", "food_id", "quantity", "calories"]
+        fields = ["id", "date_time", "food_id", "quantity", "calories"]
 
 
 class FoodDailyRecordSerializer(serializers.ModelSerializer):
