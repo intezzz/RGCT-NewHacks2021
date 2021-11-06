@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework import mixins
 from rest_framework import viewsets
-from .models import FoodRecord
-from .serilaizers import FoodRecordSerializer
+from .models import *
+from .serilaizers import *
 from datetime import datetime
 
 
@@ -34,3 +34,27 @@ class FoodRecordViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.D
         records = FoodRecord.objects.filter(user=user)
         serializer = FoodRecordSerializer(records, many=True)
         return Response(serializer.data)
+
+    def retrieve(self, request, *args, **kwargs):
+        user = request.user
+        date = kwargs["pk"]
+        date = date.split(",")
+        year = int(date[0])
+        month = int(date[1])
+        day = int(date[2])
+        date = datetime.date(year, month, day)
+        records = FoodRecord.objects.filter(date_time__date=date)
+
+        count = 0
+        for record in records:
+            if record.date_time__date == date and record.user == user:
+                count += record.calories
+        daily_report = FoodDailyRecord.objects.filter(date=date, user=user)
+        if not daily_report:
+            daily_report = FoodDailyRecord(user=user, calories=count, date=date)
+            daily_report.save()
+        else:
+            daily_report.update(calories=count)
+        all_record_serializer = FoodRecordSerializer(records, many=True)
+        daily_record_serializer = FoodDailyRecordSerializer(daily_report, many=False)
+        return Response({"daily_report": daily_record_serializer.data, "all_record": all_record_serializer.data})
