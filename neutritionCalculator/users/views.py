@@ -21,7 +21,7 @@ def create_auth_token(sender, instance=None, created=False, **kwargs):
 @api_view(['POST'])
 @permission_classes([])
 def register(request):
-    user = User.objects.create_user(request.data["username"],
+    user = User.objects.create_user(request.data["name"],
                                     request.data["email"],
                                     request.data["password"])
     user.save()
