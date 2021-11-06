@@ -17,3 +17,4 @@ class FoodRecord(models.Model):
         cal = food.calories
         self.calories = self.quantity * cal
         self.save()
+
