@@ -10,7 +10,7 @@ from datetime import datetime
 
 
 # Create your views here.
-class FoodRecordViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.DestroyModelMixin,
+class FoodRecordViewSet(viewsets.GenericViewSet, mixins.ListModelMixin,
                         mixins.CreateModelMixin, mixins.RetrieveModelMixin):
     queryset = FoodRecord.objects.all()
     serializer_class = FoodRecordSerializer
@@ -38,12 +38,11 @@ class FoodRecordViewSet(viewsets.GenericViewSet, mixins.ListModelMixin, mixins.D
     def retrieve(self, request, *args, **kwargs):
         user = request.user
         date = kwargs["pk"]
-        date = date.split(",")
-        year = int(date[0])
-        month = int(date[1])
-        day = int(date[2])
-        date = datetime.date(year, month, day)
-        records = FoodRecord.objects.filter(date_time__date=date)
+        year = int(date[0:4])
+        month = int(date[4:6])
+        day = int(date[6:8])
+        date = date(year, month, day)
+        records = FoodRecord.objects.filter(date_time__date=date).order_by('-date_time')
 
         count = 0
         for record in records:

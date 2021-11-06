@@ -4,7 +4,7 @@ from .views import *
 from rest_framework import routers, permissions
 
 router = routers.DefaultRouter()
-router.register("foods", FoodRecordViewSet, basename="foodrecords")
+router.register("foodrecords", FoodRecordViewSet, basename="foodrecords")
 
 urlpatterns = [
     path("", include(router.urls)),
