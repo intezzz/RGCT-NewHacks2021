@@ -31,3 +31,29 @@ There are currently 2 accounts in the database. Below are the credentials:
 --- | --- | ---
 username | gl | admin
 password | g12345 | admin
+
+### Front-end
+We chose to use React Native for the front end as it has a large community, and that it integrates well. It is also 
+cross-platform which is a huge plus for us.
+
+We used Expo for showing a live application while developing.
+
+### Development Requirements
+To continue developing the application, some tools are to be installed.
+
+### Frontend codebase
+ A developer would need some tools that are available for free on Windows, MacOS and Linus.
+ 1) Download npm and node.js
+ 2) Install and add nodejs/node_modules/npm/bin to PATH (this can be omitted)
+ 3) Clone repository and change directories to HappinessApp-ReactNative
+ 4) Run `npm install -g expo-cli` to install expo build services to emulate and test the application on your mobile device or emulator
+ 5) Run `npm install` to install all project dependencies
+ 6) Run `expo start` to commence app deployment on localhost network
+ 7) Download Expo app on your mobile device and scan the QR code to open the app on your mobile device, or run it on your emulator by choosing the corresponding option given
+
+ ### Backend codebase
+ 1) Download and install Python (versions 3.7 or after)
+ 2) Change directories to HappinessApp-Django
+ 3) Run `pip install -r requirements.txt` to install all packages used in the project
+ 4) Run `python manage.py makemigrations` and `python manage.py migrate` if this is the first time running the code
+ 5) Run `python manage.py runserver` to run the Django server on your local network localhost
