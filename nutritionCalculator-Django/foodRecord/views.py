@@ -25,6 +25,7 @@ class FoodRecordViewSet(viewsets.GenericViewSet, mixins.ListModelMixin,
             food_record = FoodRecord(food_id_id=food_id, quantity=quantity, date_time=time, user=user)
             food_record.calculate_calories()
             food_record.save()
+            serializer = FoodRecordSerializer(food_record)
 
             daily_record = FoodDailyRecord.objects.filter(date=time, user=user)
             if not daily_record:
