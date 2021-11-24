@@ -38,7 +38,7 @@ cross-platform which is a huge plus for us.
 
 We used Expo for showing a live application while developing.
 
-### Development Requirements
+## Development Requirements
 To continue developing the application, some tools are to be installed.
 
 ### Frontend codebase
@@ -57,3 +57,15 @@ To continue developing the application, some tools are to be installed.
  3) Run `pip install -r requirements.txt` to install all packages used in the project
  4) Run `python manage.py makemigrations` and `python manage.py migrate` if this is the first time running the code
  5) Run `python manage.py runserver` to run the Django server on your local network localhost
+
+## Further Developments
+Due to the nature of a hackathon, we were not able to implement all the features we envisioned. There are a few things that can be added in the future to further develop the application.
+
+### Autocompletion when searching
+While most ingredients are included, there are a lot of different varients of the same ingredient. To facilitate an easier and smoother experience for users, autocompletion of the search bar is to be implemented should there are further developments to the application.
+
+### Showing user history
+There is such functionality implemented in the backend Django API, however due to time constraint, and being unfamiliar with JavaScript, we were not able to finish implementing a front-end for such functionality. It is to be implemented if there is further development.
+
+### Bug fixes
+During the hackathon, there were bugs that were found and that we did not have sufficient time to fix, where we resorted to quick fixes for judging and demo pruposes. These bugs are to be fixed first thing if we started further developing of the app.
