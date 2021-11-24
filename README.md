@@ -45,7 +45,7 @@ To continue developing the application, some tools are to be installed.
  A developer would need some tools that are available for free on Windows, MacOS and Linus.
  1) Download npm and node.js
  2) Install and add nodejs/node_modules/npm/bin to PATH (this can be omitted)
- 3) Clone repository and change directories to HappinessApp-ReactNative
+ 3) Clone repository and change directories to front-end
  4) Run `npm install -g expo-cli` to install expo build services to emulate and test the application on your mobile device or emulator
  5) Run `npm install` to install all project dependencies
  6) Run `expo start` to commence app deployment on localhost network
@@ -53,7 +53,7 @@ To continue developing the application, some tools are to be installed.
 
  ### Backend codebase
  1) Download and install Python (versions 3.7 or after)
- 2) Change directories to HappinessApp-Django
+ 2) Change directories to nutritionCalculator-DjangoHappinessApp-Django
  3) Run `pip install -r requirements.txt` to install all packages used in the project
  4) Run `python manage.py makemigrations` and `python manage.py migrate` if this is the first time running the code
  5) Run `python manage.py runserver` to run the Django server on your local network localhost
