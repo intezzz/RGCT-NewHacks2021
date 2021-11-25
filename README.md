@@ -1,6 +1,7 @@
 # Team RGCT
 
 > This is a repo for NewHacks 2021
+> Devpost: [click me](https://devpost.com/software/rgct)
 
 ## The Project
 Our team has chosen the theme "health" among three.
